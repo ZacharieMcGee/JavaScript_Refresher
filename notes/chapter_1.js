@@ -42,7 +42,7 @@ checkEquality(3, 10)
 
 let array1 = [1,4,5,62,737,34,23,123,6,2,6]
 
-let i = 0;
+let i = 0
 let length = array1.length
 
 while( i < length ) {

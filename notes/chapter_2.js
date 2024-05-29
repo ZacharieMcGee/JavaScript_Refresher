@@ -1,3 +1,5 @@
+const { addStrings, array1 } = require("./chapter_1")
+
 //// data manipulation
 
 let exampleSentence = 'this is a string'
@@ -62,22 +64,76 @@ let nameKey = 'name'
 bio[nameKey] = 'henry'
 bio['numOfFriends'] = 10 // initialize new keys and values
 
-console.log(bio['numOfFriends'])
+// console.log(bio['numOfFriends'])
 
-console.log('age' in bio)
-console.log('NumOfBananas' in bio)
+// console.log('age' in bio)
+// console.log('NumOfBananas' in bio)
 
 bio.age = 29
-console.log(bio['age'])
+// console.log(bio['age'])
 
 delete bio.age
-console.log(bio)
+// console.log(bio)
 
-console.log(bio.friends.juan.desc)
+// console.log(bio.friends.juan.desc)
 
-console.log(Object.keys(bio)) // returns array of all the keys in bio object
-console.log(Object.values(bio)) // return array of all values
-console.log(Object.entries(bio)) // return array or arrays
+// console.log(Object.keys(bio)) // returns array of all the keys in bio object
+// console.log(Object.values(bio)) // return array of all values
+// console.log(Object.entries(bio)) // return array or arrays
 
 bio.joke // returns undefined
 'joke' in bio // returns false
+
+//// scoping
+
+function hellWorld() {
+  let sentence = 'hello world'
+  // console.log(sentence)
+}
+
+//// closures
+// return function retains access to a variable from outer scope even after finished executing 
+
+function counter() {
+  let count = 0 
+
+  return function () {
+    count ++
+    console.log(count)
+  }
+}
+
+let increment = counter()
+
+increment()
+increment()
+
+// modular code - imported from chapter 1
+
+console.log(addStrings('goodbye', 'world'))
+
+//// error handling and debuggin
+
+const brokenObject = {
+  word: 'nice'
+}
+
+function problemCodeBlock() {
+  try {
+    console.log('attempted try block')
+    const subObject = brokenObject.hello.world
+    console.log(subObject)
+  } catch (err) { 
+    // if this catches an error, it will skip the code in the try block
+    console.log(err.message)
+  } 
+}
+
+// problemCodeBlock()
+
+function throwError() {
+  throw new Error('custom error message')
+}
+
+throwError()
+

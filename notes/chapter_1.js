@@ -71,3 +71,8 @@ addStrings('hello')
 
 let newString = addStrings('not the')
 console.log(newString)
+
+module.exports = {
+  addStrings,
+  array1
+}

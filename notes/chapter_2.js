@@ -12,7 +12,6 @@ console.log(combinedString)
 let coercedString = '3' + 5 
 console.log(coercedString)
 
-
 // .indexOf()
 // .split()
 // .includes()

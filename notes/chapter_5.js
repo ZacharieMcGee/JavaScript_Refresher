@@ -9,7 +9,7 @@ class Person {
   // class body
   constructor(name, age) {
     this.name = name // name is a default property of the class
-    this.age = age
+    this.age = age // THIS refers to Person class
   }
 
   // can define methods = functions associated with a class
